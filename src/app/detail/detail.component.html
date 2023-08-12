@@ -1,0 +1,54 @@
+<div class="container mb-3">
+    <h2 class="text-center py-2 my-4" id="top">{{data?.title}}</h2>
+    <div class="row my-5">
+        <div class="col-md-6">
+            <img src="{{data?.img}}" class="img-fluid border"  alt="">
+        </div>
+        <div class="col-md-6 p-4">
+            <h5 class="fw-bold">{{data?.title}}</h5>
+            <span class="fw-bold text-price"> {{ data?.price | percentage: data?.percent | currency:'INR':'symbol':'1.0-0'}}</span> 
+            <span class="text-muted ms-2"><del>{{ data?.price | currency:'INR':'symbol':'1.0-0'}}</del> <span class="text-disc"> ({{data?.percent}}% OFF)</span> </span><br>
+          <span class="d-span"><b>Size:</b> {{data?.size}} inch</span>
+          <span class="d-span"><b>Category:</b> {{data?.category}}</span><br>
+       
+         
+          
+
+          <button *ngIf="!isAddedToCart" class="btn btn-color but" (click)="addToCart(data)">Add to Cart</button>
+          
+          <button *ngIf="isAddedToCart" class="btn btn-color but" routerLink="/cart">Go to Cart</button>
+          <div class="col-12 mt-5">
+            <div class="row">
+                <div class="col-3">
+                    <span class="detail-p fw-bold">Shape:</span>
+                    <span class="detail-p fw-bold">Medium:</span>
+                    <span class="detail-p fw-bold">Artist:</span>
+                    <span class="detail-p fw-bold">Return:</span>
+                </div>
+                <div class="col-6">
+                    <span class="detail-p"> {{data?.shape}}</span>
+                    <span class="detail-p"> {{data?.medium}}</span>
+                    <span class="detail-p"> {{data?.artist}}</span>
+                    <span class="detail-p"> {{data?.return}}</span>
+
+                </div>
+            </div>
+            <div class="row mt-5 pt-4">
+                <span class="fw-bold">Description:</span><br>
+                <span>{{data?.desc}}</span>
+            </div>
+          </div>
+        </div>
+    </div>
+    <div class="col-12 mt-4">
+        <app-similar [similarData]="getAllData" (sentId)="recieveId($event)"></app-similar>
+    
+    </div>
+    <div class="my-5">
+        <app-accordian></app-accordian>
+    </div>
+</div>
+
+
+
+

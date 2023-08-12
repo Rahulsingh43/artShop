@@ -1,0 +1,16 @@
+<div class="container">
+    <div class="col-lg-4 mt-5">
+        <img src="{{prof_img}}" class="img" alt="">
+    </div>
+    <p class="fw-bold mt-3">Name: {{fname}} {{lname}}</p>
+    <hr>
+    <div class="row my-3">
+        <div class="col-lg-2 p-3 rounded border nav bg-white ">
+            <router-outlet name="profnav"></router-outlet>
+        </div>
+        <div class=" ms-3 border bg-white p-3 rounded detail col-lg-9">
+            <router-outlet name="user"></router-outlet>
+        </div>
+    </div>
+
+</div>

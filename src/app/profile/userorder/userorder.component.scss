@@ -1,0 +1,24 @@
+
+    .max-w{
+        max-height: 300px;
+        overflow: scroll;
+    }
+    .content{
+        max-height: 200px;
+        overflow-y: auto;
+        text-align: justify;
+        scrollbar-width: thin;
+        scrollbar-color: #888888 #dddddd;
+        border-radius: 8px;
+      padding: 10px;
+    }
+    .text-prod-title{
+        font-size: .8rem;
+    }
+    @media screen and (max-width: 390px){
+        .text-prod-title{
+            font-size: 0.7rem;
+        }
+        
+        
+    }

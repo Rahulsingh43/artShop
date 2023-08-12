@@ -1,0 +1,24 @@
+
+
+<!-- <div class="container max-w"> -->
+    
+    
+    <div class="row max-w">
+        <ng-container *ngFor="let xData of orderData; let i = index">
+        <ng-container *ngFor="let x of xData; let i = index">
+            <div class="col-lg-2 col-md-6 col-12 my-2">
+                <div class="card p-3 box border" routerLink="/detail/{{x?.id}}">
+                    <div class="image ">
+                        <img src="{{x?.img}}" class="img-fluid" alt="">
+                    </div>
+                    
+                    <span class="text-center text-prod-title">{{x?.title | titlecase}}</span>
+                    <span class="">Quant: {{x?.prodQ}}</span>
+
+                </div>
+            </div>
+        </ng-container>
+        </ng-container>
+        </div>
+        
+<!-- </div> -->

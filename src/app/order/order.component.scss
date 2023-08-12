@@ -1,0 +1,51 @@
+.but {
+    padding: 8px 16px;
+    border: none;
+    background-color: #E75480;
+    border-radius: 4px;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+.bg-img{
+  background: url(../../assets/img/bgord.jpg) no-repeat center center/cover;
+}
+
+.icon{
+  animation-name: order;
+    font-size: 3.8rem;
+    color: #24d46a;
+    animation-name: ordered;
+  animation-duration: 1.1s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+@keyframes ordered {
+  from {font-size: 3.8rem;}
+  to {font-size: 6rem;}
+}
+.min-icona{
+  min-height: 100px;
+}
+.success{
+    color: #FF7F50;
+    font-size: 1.2rem;
+}
+  .min-h{
+    min-height: 500px;
+  }
+  .card{
+  padding: 50px;
+  }
+  
+  .but:active {
+    background-color: #E75480;
+    color: #fff;
+  }
+  
+  .but:hover {
+    background-color: #E75480;
+  }
+  .but.active {
+    background-color: #E75480;
+  }

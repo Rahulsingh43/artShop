@@ -1,0 +1,30 @@
+
+
+
+<div class="container mt-5">
+    <h3 class="py-3 my-3">Similar Products</h3>
+    <div class="row">
+        <ng-container *ngFor="let x of similarData">
+            <div class="col-lg-3 col-6 my-2">
+                <div class="card p-3 border">
+                    <div class="card-img ">
+                        <img src="{{x?.img}}" class="img-fluid" alt="">
+                        <div class="overlay">
+                            <div class="overlay-content">
+                                <a (click)="sentData(x?.id, x?.category)">View Detail</a>
+                            </div>
+                        </div>
+                    </div> 
+    
+                    <span class="fw-bold text-prod-title">{{x?.title | titlecase}}</span>
+                    <span class="text-muted text-prod-type">{{x?.medium}}</span>
+                    <span class="text-muted text-prod-size">{{x?.size}} inch</span>
+                    <span class="text-muted text-prod-dprice"><del>{{x?.price | currency:'INR':'symbol':'1.0-0'}}</del>
+                       <span class="text-disc"> ({{x?.percent}}% OFF)</span> </span>
+                    <span class="fw-bold text-prod-price"> {{ x?.price | percentage: x?.percent |
+                        currency:'INR':'symbol':'1.0-0'}}</span>
+                </div>
+            </div>
+        </ng-container>
+        </div>
+</div>

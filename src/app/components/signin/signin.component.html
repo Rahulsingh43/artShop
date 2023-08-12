@@ -1,0 +1,44 @@
+<div class="containr d-flex justify-content-center bg-col align-items-center">
+    <div class="col-lg-6 col-md-8 p-5 my-5 border-form bg-white">
+        <form [formGroup]="signinForm" (ngSubmit)="signInSubmit()">
+            <h3 class="text-center pb-4 mb-3">Sign In</h3>
+            <!-- <p class="err-reg text-center text-light" #showError *ngIf="errServer">{{errServer}}</p>     -->
+            <div class="col-12 mb-4 form-field">
+                <label for="email" class="form-label fw-bold">Email:</label>
+                <input type="email" class="form-control" formControlName="email" id="email" autocomplete="off">
+
+                <ng-container *ngIf="signinForm.get('email')?.touched">
+                    <ng-container *ngIf="signinForm.get('email')?.hasError('required')">
+                        <span class="error-message">Required*</span>
+                    </ng-container>
+                    <ng-container *ngIf="signinForm.get('email')?.hasError('email')">
+                        <span class="error-message">Invalid</span>
+                    </ng-container>
+                </ng-container>
+            </div>
+
+            <div class="col-md-12 mb-4 form-field">
+                <label for="password" class="form-label fw-bold">Password:</label>
+      <div class="password-wrapper">
+                <input type="{{ showPassword ? 'text' : 'password' }}" class="form-control" formControlName="password" id="password" autocomplete="off">
+                <span class="password-toggle" (click)="togglePassword()">
+                  <i class="fas" [ngClass]="showPassword ? 'fa-eye-slash' : 'fa-eye'"></i>
+                </span>
+      </div>
+                <ng-container *ngIf="signinForm.get('password')?.touched">
+                    <ng-container *ngIf="signinForm.get('password')?.hasError('required')">
+                        <span class="error-message">Required*</span>
+                    </ng-container>
+                    
+                </ng-container>
+            </div>
+
+            <button type="submit" class="but w-100 text-light mt-3" [disabled]="signinForm.invalid">Sign In</button>
+  
+    </form>
+    <div class="col-12 mt-3">
+        <span class="d-block">Don't have an account?<a routerLink="/signup" class="sign"> Sign Up</a></span>
+      </div>
+</div>
+</div>
+<ng-toast></ng-toast>

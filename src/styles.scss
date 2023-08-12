@@ -1,1 +1,11 @@
 /* You can add global styles to this file, and also import other style files */
+@import 'ngx-owl-carousel-o/lib/styles/scss/owl.carousel';
+@import 'ngx-owl-carousel-o/lib/styles/scss/owl.theme.default';
+@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@200;300;400;500;600&family=Montserrat:ital,wght@0,800;1,400;1,800&family=Poppins:ital,wght@0,300;0,600;1,200;1,800&family=Roboto:wght@300&family=Shantell+Sans&family=Ubuntu:wght@300&display=swap');
+body{
+    background-color: rgb(253, 249, 250) !important;
+}
+
+p{
+    font-family: 'Poppins', sans-serif;
+}

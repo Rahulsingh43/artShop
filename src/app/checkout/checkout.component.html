@@ -1,0 +1,142 @@
+<div class="container">
+    <div class="d-flex justify-content-center align-items-center p-3">
+        <div class="row p-3">
+
+            <div class="col-lg-5 ms-5">
+                <div class="p-4 bgcol-white border-form">
+                <form [formGroup]="addressForm" (ngSubmit)="addressFormSub()">
+                    <div class="row">
+                        <h4 class="text-center mb-4">Delivery Details</h4>
+                        <div class="col-6 mb-3">
+                            <label for="fname" class="form-label fw-bold">Full Name:</label><br>
+                            <input type="text" class="form-control" formControlName="fname" id="fname">
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="email" class="form-label fw-bold">Email:</label>
+                            <input type="text" class="form-control" formControlName="email" id="email">
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="phn" class="form-label fw-bold">Phone no:</label>
+                            <input type="text" class="form-control" formControlName="phn" id="phn">
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="city" class="form-label fw-bold">City / District:</label>
+                            <input type="text" class="form-control" formControlName="city" id="city">
+                        </div>
+                        <div class="col-6 mb-3">
+                            <label for="locality" class="form-label fw-bold">Locality:</label>
+                            <input type="text" class="form-control" formControlName="locality" id="locality">
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="stateSelector" class="form-label fw-bold">Select a State:</label>
+                            <div class="select-wrapper">
+                                <select id="stateSelector" class="form-select" formControlName="selectedState">
+                                    <option value="" selected disabled>--Select State--</option>
+                                    <option value="Andhra Pradesh">Andhra Pradesh</option>
+                                    <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+                                    <option value="Assam">Assam</option>
+                                    <option value="Bihar">Bihar</option>
+                                    <option value="Chhattisgarh">Chhattisgarh</option>
+                                    <option value="Goa">Goa</option>
+                                    <option value="Gujarat">Gujarat</option>
+                                    <option value="Haryana">Haryana</option>
+                                    <option value="Himachal Pradesh">Himachal Pradesh</option>
+                                    <option value="Jharkhand">Jharkhand</option>
+                                    <option value="Karnataka">Karnataka</option>
+                                    <option value="Kerala">Kerala</option>
+                                    <option value="Madhya Pradesh">Madhya Pradesh</option>
+                                    <option value="Maharashtra">Maharashtra</option>
+                                    <option value="Manipur">Manipur</option>
+                                    <option value="Meghalaya">Meghalaya</option>
+                                    <option value="Mizoram">Mizoram</option>
+                                    <option value="Nagaland">Nagaland</option>
+                                    <option value="Odisha">Odisha</option>
+                                    <option value="Punjab">Punjab</option>
+                                    <option value="Rajasthan">Rajasthan</option>
+                                    <option value="Sikkim">Sikkim</option>
+                                    <option value="Tamil Nadu">Tamil Nadu</option>
+                                    <option value="Telangana">Telangana</option>
+                                    <option value="Tripura">Tripura</option>
+                                    <option value="Uttar Pradesh">Uttar Pradesh</option>
+                                    <option value="Uttarakhand">Uttarakhand</option>
+                                    <option value="West Bengal">West Bengal</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-12 mb-3">
+                            <label for="address" class="form-label fw-bold">Address:</label>
+                            <input type="text" class="form-control" formControlName="address" id="address">
+                        </div>
+                    </div>
+                    <div class="form-button mt-3">
+                        <button type="submit" class="but w-100">Save Address</button>
+                    </div>
+                </form>
+            </div>
+            </div>
+
+
+
+            <div class="ms-5 col-lg-5 p-4 bgcol-white border-form">
+                <h4 class="text-center mb-4">Payment Details</h4>
+                <span class="mb-2">Total Price to Pay - <span class="fw-bold">{{totPrice + deliveryCharge | currency:"INR":"symbol":"1.0-0"}}</span></span>
+                <div class="img col-7 mb-3">
+                    <span>Debit Card Accepted<img src="assets/img/cardpay.png" class="img-fluid" alt=""></span>
+                </div>
+                <form [formGroup]="paymentForm" (ngSubmit)="paySubmit()">
+                    <div class="row">
+
+                        <div class="col-12 mb-3">
+                            <label for="cname" class="form-label fw-bold">Name On Card:</label>
+                            <input type="text" class="form-control" formControlName="cname" 
+                                id="cname">
+                        </div>
+                        <div class="col-12 mb-3">
+                            <label for="cnum" class="form-label fw-bold">Card No.</label>
+                            <input type="text" class="form-control" formControlName="cnum"
+                                placeholder="111-3433-4454-8766" id="cnum">
+                        </div>
+                        <div class="col-12 mb-3">
+                            <label for="exmonth" class="form-label fw-bold">Expiry Month:</label>
+                            <select id="monthSelect" class="form-select" formControlName="exmonth">
+                                <option value="01">January</option>
+                                <option value="02">February</option>
+                                <option value="03">March</option>
+                                <option value="04">April</option>
+                                <option value="05">May</option>
+                                <option value="06">June</option>
+                                <option value="07">July</option>
+                                <option value="08">August</option>
+                                <option value="09">September</option>
+                                <option value="10">October</option>
+                                <option value="11">November</option>
+                                <option value="12">December</option>
+                            </select>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="exyear" class="form-label fw-bold">Select a Year:</label>
+                            <select id="exyear" class="form-select" formControlName="exyear">
+                                <option value="2023">2023</option>
+                                <option value="2024">2024</option>
+                                <option value="2025">2025</option>
+                                <option value="2026">2026</option>
+                                <option value="2027">2027</option>
+                                <option value="2028">2028</option>
+                            </select>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="cvv" class="form-label fw-bold">CVV NO:</label>
+                            <input type="text" formControlName="cvv" class="form-control" id="cvv">
+                        </div>
+                        <div class="form-button mt-3">
+                            <button type="submit" class="but w-100">Pay To Order</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<ng-toast></ng-toast>

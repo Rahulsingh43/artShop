@@ -1,0 +1,78 @@
+<ng-container  *ngIf="cartData?.length > 0; else elsePart">
+
+<div class="container p-5">
+
+    <div class="row" >
+        <div class="col-lg-8 col-12">
+            <ng-container *ngFor="let x of cartData">
+                <div class="card p-3 box mb-4 border">
+                    <div class="row d-flex">
+                        <div class="img col-md-5 col-sm-12 col-12">
+                            <img src="{{x.img}}" class="img" height="180px" width="auto" alt="">
+                        </div>
+                        <div class="content col-md-7 col-12">
+                            <span class="fw-bold text-bl">{{x.title}}</span>
+                            <span class="text-muted  text-bl text-prod-dprice"><del>{{x?.price |
+                                    currency:'INR':'symbol':'1.0-0'}}</del>
+                                <span class="text-disc"> ({{x?.percent}}% OFF)</span> </span>
+
+                            <span class="fw-bold text-bl mb-2 text-prod-price"> {{ x?.price | percentage: x?.percent |
+                                currency:'INR':'symbol':'1.0-0'}} </span>
+                            <span class="mt-1">Total Price:</span> <span class="fw-bold text mt-3 text-prod-price"> {{
+                                x?.price * x?.prodQ | percentage: x?.percent |
+                                currency:'INR':'symbol':'1.0-0'}} </span>
+                            <div class="mt-4 col-12">
+                                <button class=" bg-button me-3" (click)="decrement(x)">-</button>
+                                <span>{{x.prodQ}}</span>
+                                <button class=" bg-button ms-3" (click)="increment(x)">+</button>
+                                <button class=" bg-button bg-delete ms-5" (click)="deleteItem(x)">delete</button>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </ng-container>
+        </div>
+
+        <div class=" col-lg-4 col-md-8 ">
+            <div class="d-flex justify-content-center align-items-center col-12">
+                <div class="card p-3" style="width: 18rem">
+                    <h6 class="text-muted text-center mb-3">Price Detail</h6>
+                    <div class="row">
+                        <div class="col-8">
+                            
+                            <span class="d-block">Total Product:</span>
+                            <span class="d-block">Delivery Charges:</span><br>
+                            <span class="d-block fw-bold">Total Price:</span>
+                        </div>
+                        <div class="col-4 ">
+                            <span class="d-block">{{totProd}}</span>
+                            <span class="d-block">{{deliveryCharge | currency:"INR":"symbol":"1.0-0"}}</span><br>
+                            <span class="d-block fw-bold" >{{totPrice + deliveryCharge | currency:"INR":"symbol":"1.0-0"}}</span>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+
+    <div class="col-12 mt-5 d-flex justify-content-center align-items-center">
+        
+        <div class="btn">
+            <button class=" d-block btn but" routerLink="/checkout">Place Order</button>
+        </div>
+    </div>
+</div>
+</ng-container>
+
+<ng-template #elsePart>
+    <div class="container min-h ">
+        <div class="else-content text-center">
+            <h3 class="else-text mb-5">Your Cart Is Empty!</h3>
+            <button type="button" class="but" routerLink="/">Continue Shopping</button>
+        </div>
+
+    </div>
+</ng-template>

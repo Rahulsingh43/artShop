@@ -1,0 +1,134 @@
+
+
+.but {
+    padding: 8px 16px;
+    border: none;
+    background-color: #E75480;
+    border-radius: 4px;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .but:active {
+    background-color: #e34675;
+    color: #fff;
+  }
+  
+  .but:hover {
+    background-color: #cf2357;
+  }
+  .but.active {
+    background-color: #cf2357;
+  }
+  
+
+.acrylic-desc{
+    width: 50%;
+ }
+ .text-prod-type{
+	font-weight: 600;
+}
+ .text-disc{
+	color: #E75480;
+}
+.text-prod-price{
+	color: #70a3ea;
+}
+.dropdown-menu:hover{
+cursor: pointer;
+display: block;
+}
+.min-h{
+    min-height: 500px;
+}
+.form-control{
+    border: 2px solid #E75480;
+    border-radius: 10px;
+    border-width: 3px;
+    
+}
+.form-control:focus{
+      border: 2px solid #2091E7;
+    box-shadow: none;
+    border-width: 3px;
+    border-radius: 10px;
+
+  }
+  .dropdown-menu{
+	cursor: pointer;
+}
+.dropdown-item{
+	color: #0a5a96;
+}
+ .card {
+	&:hover {
+		& .card-img .overlay {
+			background-color: rgba(25,29,38,.85);
+			transition: opacity .2s ease;
+			opacity: 1;
+		}
+	}
+	
+	&-img {
+		position: relative;
+		& .overlay {
+			position: absolute;
+			left: 0;
+			top: 0;
+			width: 100%;
+			height: 100%;
+			opacity: 0;
+			
+			& .overlay-content {
+				line-height: 280px;
+				width: 100%;
+				text-align: center;
+				color: #fff;
+				
+				& a {
+					color: #fff;
+					padding: 0 2rem;
+					display: inline-block;
+					border: 1px solid rgba(255,255,255,.4);
+					height: 40px;
+					line-height: 40px;
+					border-radius: 20px;
+					cursor: pointer;
+					text-decoration: none;
+					
+					&:hover, &.hover {
+						background: #E75480;
+						border-color: #5ec1cc;
+					}
+				}
+			}
+		}
+	}
+	
+	
+}
+
+@media screen and (max-width: 992px){
+     .acrylic-desc{
+        width: 70%;
+     }
+	}
+@media screen and (max-width: 762px){
+     .acrylic-desc{
+        width: 80%;
+     }
+	}
+@media screen and (max-width: 560px){
+     .acrylic-desc{
+        width: 100%;
+     }
+	}
+
+    @media screen and (max-width: 440px){
+        .text-prod-title, .text-prod-type, 
+        .text-prod-size, .text-prod-price,
+        .text-prod-dprice, .text-disc{
+            font-size: 0.7rem;
+        }
+    }

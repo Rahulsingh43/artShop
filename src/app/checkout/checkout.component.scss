@@ -1,0 +1,42 @@
+/* Style for the select wrapper */
+.bgcol-white{
+  background-color: #fff;
+  box-shadow: 1px 21px 20px gray;
+
+}
+.border-form{
+  border-top: 18px solid #E75480;
+}
+.form-control, .form-select{
+  border: 1px solid #000;
+  border-radius: none;
+}
+.form-control:focus, .form-select:focus{
+    border: 1px solid #000;
+    border-bottom: 3px solid #000;
+  box-shadow: none;
+  border-radius: 10px;
+}
+
+
+.but {
+  padding: 8px 16px;
+  border: none;
+  background-color: #E75480;
+  border-radius: 4px;
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.but:active {
+  background-color: #E75480;
+  color: #fff;
+}
+
+.but:hover {
+  background-color: #ef3f74;
+}
+
+
+  

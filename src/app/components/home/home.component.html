@@ -1,0 +1,144 @@
+<div class="img">
+    <img src="assets/img/banner2.jpg" class="img-fluid" alt="">
+</div>
+<!-- <p>{{num | percentage: 20}}</p> -->
+<div class="container py-4 my-4">
+    <app-owl-carousel></app-owl-carousel>
+    <div class="py-3 my-4">
+        <h2 class="text-center text-head mb-2 text">Recently Added</h2>
+        <div class="row mt-4">
+            <ng-container *ngFor="let x of newData">
+                <div class="col-lg-3 col-6 my-2">
+                    <div class="card p-3 border">
+                        <div class="card-img ">
+                            <img src="{{x?.img}}" class="img-fluid" alt="">
+                            <div class="overlay">
+                                <div class="overlay-content">
+                                    <a routerLink="/detail/{{x?.id}}/{{x?.category}}">View Detail</a>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <span class="fw-bold text-prod-title">{{x?.title | titlecase}}</span>
+                        <span class="text-muted text-prod-type">{{x?.medium}}</span>
+                        <span class="text-muted text-prod-size">{{x?.size}} inch</span>
+                        <span class="text-muted text-prod-dprice"><del>{{x?.price |
+                                currency:'INR':'symbol':'1.0-0'}}</del> <span class="text-disc"> ({{x?.percent}}%
+                                OFF)</span> </span>
+                        <span class="fw-bold text-prod-price"> {{ x?.price | percentage: x?.percent |
+                            currency:'INR':'symbol':'1.0-0'}}</span>
+
+                    </div>
+                </div>
+            </ng-container>
+        </div>
+    </div>
+
+    <div class="py-3 my-3">
+        <h2 class="text-center mb-2 text">Best Sellers</h2>
+        <div class="row mt-4">
+            <ng-container *ngFor="let x of mostsaleData">
+                <div class="col-lg-3 col-6 my-2">
+                    <div class="card p-3 border">
+                        <div class="card-img ">
+                            <img src="{{x?.img}}" class="img-fluid" alt="">
+                            <div class="overlay">
+                                <div class="overlay-content">
+                                    <a routerLink="/detail/{{x?.id}}/{{x?.category}}">View Detail</a>
+                                </div>
+                            </div>
+                        </div> 
+
+                        <span class="fw-bold text-prod-title">{{x?.title | titlecase}}</span>
+                        <span class="text-muted text-prod-type">{{x?.medium}}</span>
+                        <span class="text-muted text-prod-size">{{x?.size}} inch</span>
+                        <span class="text-muted text-prod-dprice"><del>{{x?.price | currency:'INR':'symbol':'1.0-0'}}</del>
+                           <span class="text-disc"> ({{x?.percent}}% OFF)</span> </span>
+                        <span class="fw-bold text-prod-price"> {{ x?.price | percentage: x?.percent |
+                            currency:'INR':'symbol':'1.0-0'}}</span>
+                    </div>
+                </div>
+            </ng-container>
+        </div>
+    </div>
+
+    <div class="py-3 my-3">
+        <h2 class="text-center mb-2 text">Featured Paintings</h2>
+        <div class="row mt-4">
+            <ng-container *ngFor="let x of traditionalData">
+                <div class="col-lg-3 col-6 my-">
+                    <div class="card p-3 border">
+                        <div class="card-img ">
+                            <img src="{{x?.img}}" class="img-fluid" alt="">
+                            <div class="overlay">
+                                <div class="overlay-content">
+                                    <a routerLink="/detail/{{x?.id}}/{{x?.category}}">View Detail</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <span class="fw-bold text-prod-title">{{x?.title | titlecase}}</span>
+                        <span class="text-muted text-prod-type">{{x?.medium}}</span>
+                        <span class="text-muted text-prod-size">{{x?.size}} inch</span>
+                        <span class="text-muted text-prod-dprice"><del>{{x?.price | currency:'INR':'symbol':'1.0-0'}}</del>
+                           <span class="text-disc"> ({{x?.percent}}% OFF)</span></span>
+                        <span class="fw-bold text-prod-price"> {{ x?.price | percentage: x?.percent |
+                            currency:'INR':'symbol':'1.0-0'}}</span>
+                    </div>
+                </div>
+            </ng-container>
+        </div>
+    </div>
+
+    <div class="row mt-5">
+        <h2 class="text-center mb-4">What We Provide?</h2>
+        <div class="col-lg-3 col-md-6 col-12 mb-3">
+            <div class="card p-3 max-h-feature bg-white border rounded-3">
+                <h1 class="text-center icon p-2"><i class="fa-regular fa-thumbs-up"></i></h1>
+                <h6 class="text-center">BEST QUALITY</h6>
+                <p class="text-feature">Discover exquisite masterpieces at our art shop. Elevate your space with our curated collection of
+                    best quality artworks, meticulously crafted.</p>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-6 col-12 mb-3">
+            <div class="card p-3 max-h-feature bg-white border rounded-3">
+                <h1 class="text-center icon  p-2"><i class="fa-regular fa-clock"></i></h1>
+                <h6 class="text-center">SUPPORT 24/7</h6>
+                <p class="text-feature">Shop art seamlessly with 24/7 support. Our team ensures a smooth journey as you explore and acquire exceptional artworks. Experience delightful</p>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-6 col-12 mb-3">
+            <div class="card p-3 max-h-feature bg-white border rounded-3">
+                <h1 class="text-center icon p-2"> <i class="fa-solid fa-palette"></i></h1>
+                <h6 class="text-center">ART FOR EVERYONE</h6>
+                <p class="text-feature">
+                    Unlock the world of art for everyone. Explore our diverse range of captivating artworks, designed to resonate with all tastes and styles, making creativity.</p>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-6 col-12">
+            <div class="card p-3 max-h-feature bg-white border rounded-3">
+                <h1 class="text-center icon p-2"><i class="fa-solid fa-shield-heart"></i></h1>
+                <h6 class="text-center">100% PAYMENT SECURE</h6>
+                <p class="text-feature">Shop with confidence. Our art shop guarantees 100% secure payments, ensuring your peace of mind as you collect stunning artworks to enrich your space and life.</p>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="row mt-5 pt-2">
+        <div class="col-md-6">
+<h3 class="text-center p-2 mb-4">About Us</h3>
+            <div class="card p-3">
+                <span class="text-about">Indulge your artistic passion at Kala Sangam, the ultimate online painting store where creativity knows no bounds. Our curated selection boasts a wide array of premium art supplies, including exquisite acrylics that lend depth and vibrancy to your creations, watercolors that effortlessly capture delicate hues, and oil pastels that glide across the canvas with unparalleled smoothness. Whether you're a traditional artist seeking the timeless allure of oil paints or a digital enthusiast delving into the realm of pixels and vectors, our collection accommodates every style.
+
+                    At Kala Sangam, we go beyond offering products</span>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <app-accordian></app-accordian>
+
+        </div>
+    </div>
+   
+</div>

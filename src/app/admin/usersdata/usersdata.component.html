@@ -1,0 +1,61 @@
+<div class="d-x p-3 justify-content-around mt-5 shde" >
+    <!-- <button class="but" routerLinkActive="active" routerLink="userdata">Users Data</button> -->
+    <button class="butn" routerLinkActive="active" routerLink="/admin/products">Manage Products<i class="ms-2 fa-solid fa-arrow-right"></i></button>
+</div>
+
+<div class="container my-5 p-4 shad d-flex align-items-center justify-content-center rounded">
+    
+    
+  
+    
+    <div class="col-7 border">
+
+
+        <div class="col-12 row ms-c">
+            <div class="col-lg-3 border border-primary">
+                <p class="fw-bold">User Email</p>
+            </div>
+            <div class="col-lg-3 border border-primary">
+                <p class="fw-bold">Product Title</p>
+            </div>
+            <div class="col-lg-2 border border-primary">
+                <p class="fw-bold">Quant</p>
+            </div>
+            <div class="col-lg-3 border border-primary">
+                <p class="fw-bold">Product ID</p>
+            </div>
+            <!-- <div class="col-lg-2 border border-primary">
+            <p class="fw-bold">Delivery Status</p>
+        </div> -->
+        </div>
+        <ng-container *ngFor="let x of usersFilter">
+            <div class="row col-12 ms-c">
+                <div class="col-lg-3 border border-primary">
+                    <span>{{x?.email}}</span>
+                </div>
+                <div class="col-lg-3 border border-primary">
+                    <ng-container *ngFor="let arr of x?.order">
+                        <ng-container *ngFor="let sub  of arr; let i = index">
+                            <span>{{sub?.title}}</span><br>
+                        </ng-container>
+                    </ng-container>
+                </div>
+                <div class="col-lg-2 border border-primary">
+                    <ng-container *ngFor="let arr of x?.order">
+                        <ng-container *ngFor="let sub  of arr; let i = index">
+                            <span>{{sub?.prodQ}}</span><br>
+                        </ng-container>
+                    </ng-container>
+                </div>
+                <div class="col-lg-3 border border-primary">
+                    <ng-container *ngFor="let arr of x?.order">
+                        <ng-container *ngFor="let sub  of arr; let i = index">
+                            <span>{{sub?.id}}</span><br>
+                        </ng-container>
+                    </ng-container>
+                </div>
+
+            </div>
+        </ng-container>
+    </div>
+</div>

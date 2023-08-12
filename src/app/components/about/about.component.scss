@@ -1,0 +1,41 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  
+  header {
+    padding: 20px;
+    text-align: center;
+  }
+  .d-h{
+    display: inline;
+  }
+  
+  main {
+    padding: 20px;
+  }
+  
+  .about, .mission {
+    margin-bottom: 30px;
+  }
+  
+  h1, h2 {
+    color: #333;
+  }
+  
+  footer {
+    background-color: #ffffff;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+  }
+  .kala{
+    font-size: 2rem;
+    font-weight: 500;
+    color: rgb(76, 156, 205);
+  }
+  .sang{
+    font-size: 2rem;
+    color: rgb(227, 60, 118);
+  }

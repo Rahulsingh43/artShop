@@ -1,0 +1,97 @@
+.profile-opt {
+    display: block; /* Change to inline-block */
+    flex-direction: column;
+    // justify-content: space-around;
+    margin-bottom: 10px;
+    padding: 6px 12px; /* Adjust padding to fit around text */
+    background-color: #f7bfbf;
+    color: #160101;
+    border: none;
+    border-radius: 5px;
+    text-align: center;
+    cursor: pointer;
+    // font-weight: bold;
+    // margin-bottom: 30px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+    width: 40%;
+  }
+  
+  .profile-opt:hover {
+    background-color: #f5cae6;
+  }
+ 
+  .but {
+    padding: 8px 16px;
+    border: none;
+    min-height: 20px;
+    min-width: 150px;
+    background-color: #e94375;
+    border-radius: 4px;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .but:active {
+    background-color: #e34675;
+    color: #fff;
+  }
+  
+  .but:hover {
+    background-color: #cf2357;
+  }
+  .but.active {
+    background-color: #cf2357;
+  }
+  .max-w{
+    max-width: 992px;
+    overflow: scroll;
+}
+  
+  @media screen and (max-width: 992px){
+    .profile-opt {
+      display: inline; /* Change to inline-block */
+      margin-right: 10px;
+      margin-bottom: 30px;
+      padding: 6px 12px; /* Adjust padding to fit around text */
+      background-color: #f7bfbf;
+      color: #160101;
+      border: none;
+      border-radius: 5px;
+      text-align: center;
+      cursor: pointer;
+      // font-weight: bold;
+      // margin-bottom: 30px;
+      text-decoration: none;
+      transition: background-color 0.3s ease;
+      width: 40%;
+    }
+    .profile-opt:hover {
+      background-color: #f5cae6;
+    }
+    
+  .but {
+    padding: 8px 16px;
+    border: none;
+    min-height: 20px;
+    min-width: 150px;
+    background-color: #E75480;
+    border-radius: 4px;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .but:active {
+    background-color: #e34675;
+    color: #fff;
+  }
+  
+  .but:hover {
+    background-color: #cf2357;
+  }
+  .but.active {
+    background-color: #cf2357;
+  }
+  }

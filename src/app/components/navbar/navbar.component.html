@@ -1,0 +1,90 @@
+<nav class="navbar navbar-expand-lg border bg-col" appScrollEvent>
+  <div class="container-fluid">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <a class="navbar-brand" routerLink="/"><img src="assets/img/logof1.png" width="200px" height="30px" class="img-fluid" alt=""></a>
+
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav  mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active nav-link-ltr" aria-current="page" routerLinkActive="active" routerLink="/">Home</a>
+        </li>
+
+        <li class="nav-item dropdown">
+          <a class="nav-link nav-link-ltr" routerLinkActive="active" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Categories
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item drop-menu" routerLinkActive="active" routerLink="/acrylic">Acrylic paintings</a></li>
+            <li><a class="dropdown-item drop-menu" routerLinkActive="active" routerLink="/traditional">Traditional paintings</a></li>
+            <li><a class="dropdown-item drop-menu" routerLinkActive="active" routerLink="/oil-pastel">Oil-Pastel paintings</a></li>
+            <li><a class="dropdown-item drop-menu" routerLinkActive="active" routerLink="/buddha">Buddha paintings</a></li>
+            <li><a class="dropdown-item drop-menu" routerLinkActive="active" routerLink="/water-color">Water-Color paintings</a></li>
+            
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active me-5 nav-link-ltr"  aria-current="page" routerLinkActive="active" routerLink="/about">About Us</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active me-5 nav-link-ltr"  aria-current="page" routerLinkActive="active" routerLink="/admin" *ngIf="adminAuthentication">Admin</a>
+        </li>
+      </ul>
+    </div>
+    
+    <ng-container *ngIf="logedin()">
+      <span class="navbar-text dropdown me-4">
+        <a class="nav-link" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          <img src="{{prof_img}}" class="rounded-circle" width="30px" height="30px" alt="img">
+        </a>
+        <ul class="dropdown-menu">
+          <li> <a class="dropdown-item drop-menu" routerLinkActive="active"
+              [routerLink]="['/profile',{outlets:{profnav:['profilenav'],user:['userinfo']}}]">Profile</a></li>
+          <li class="dropdown-item drop-menu log"  (click)="logedout()">Sign Out</li>
+        </ul>
+      </span>
+   
+    </ng-container>
+
+    <ng-container *ngIf="!logedin()">
+      <span class="navbar-text dropdown me-4">
+        <a class="nav-link" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          <img src="assets/img/profile.png" class="rounded-circle" width="30px"
+            style="cursor: pointer;" height="30px" alt="img">
+          <ul class="dropdown-menu">
+            <li>
+              <a class="dropdown-item drop-menu" routerLinkActive="active" routerLink="/signup">Sign Up</a>
+            </li>
+            <li>
+              <a class="dropdown-item drop-menu" routerLinkActive="active" routerLink="/signin">Sign In</a>
+            </li>
+          </ul>
+        </a>
+      </span>
+    </ng-container>
+    <span class="fa-solid me-5 position-relative i-size fa-bag-shopping" routerLink="/cart"><span
+        class="position-absolute top-0 start-100 translate-middle n-size bg-num rounded-pill ">{{totCartItem}}</span></span>
+  </div>
+</nav>
+
+
+<ng-container *ngIf="loading; else elseBlock">
+  <div class="text-center">
+    <div class="container d-flex justify-content-center align-items-center min-h">
+      <div class="col-5 text-center p-5">
+        <img src="assets/img/loading2.gif" alt="Loading" width="100px" height="100px">
+      </div>
+    </div>
+  <!-- <div class="spinner-border  text-primary" role="status">
+    <span class="visually-hidden">Loading...</span>
+  </div> -->
+</div>
+</ng-container>
+<ng-template #elseBlock>
+<router-outlet></router-outlet>
+</ng-template>
+<!-- <router-outlet></router-outlet> -->
+<!-- <lib-ng-toast></lib-ng-toast> -->

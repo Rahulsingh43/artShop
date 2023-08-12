@@ -1,0 +1,88 @@
+<div class="container d-flex justify-content-center align-items-center">
+  <div class="col-lg-6 col-md-8 p-5 my-5 border-form bg-white  ">
+    <form [formGroup]="signUp" (ngSubmit)="signupSubmit()">
+    <h3 class="text-center pb-4 mb-3 text-dark ">Sign Up</h3>
+
+    <!-- <p class="err-reg text-center text-dark " #showError *ngIf="errServer">{{errServer}}</p>     -->
+
+        <div class="row">
+            <div class="col-md-6 mb-4 form-field">
+                <label for="first_name" class="form-label text-dark fw-bold ">First Name:</label>
+                <input type="text" class="form-control" formControlName="first_name" id="first_name">
+                  <ng-container *ngIf="signUp.get('first_name')?.touched || signUp.get('first_name')?.dirty">
+                    <ng-container *ngIf="signUp.get('first_name')?.hasError('required')">
+                  <span class="error-message">Required*</span>
+                    </ng-container>
+                    <ng-container *ngIf="signUp.get('first_name')?.hasError('pattern')">
+                  <span class="error-message">Invalid</span>
+                    </ng-container>      
+                </ng-container>
+            </div>
+
+            <div class="col-md-6 mb-4 form-field">
+                <label for="last_name" class="form-label text-dark fw-bold ">Last Name:</label>
+                <input type="text" class="form-control" formControlName="last_name" id="last_name">
+                <ng-container *ngIf="signUp.get('last_name')?.touched || signUp.get('last_name')?.dirty">
+                    <ng-container *ngIf="signUp.get('last_name')?.hasError('required')">
+                  <span class="error-message">Required*</span>
+                    </ng-container>
+                    <ng-container *ngIf="signUp.get('last_name')?.hasError('pattern')">
+                  <span class="error-message">Invalid</span>
+                    </ng-container>
+                </ng-container>
+            </div>
+
+            <div class="col-md-6 mb-4 form-field">
+                <label for="email" class="form-label text-dark fw-bold ">Email:</label>
+                <input type="email" class="form-control" formControlName="email" id="email">
+                <ng-container *ngIf="signUp.get('email')?.touched">
+                    <ng-container *ngIf="signUp.get('email')?.hasError('required')">
+                  <span class="error-message">Required*</span>
+                    </ng-container>
+                    <ng-container *ngIf="signUp.get('email')?.hasError('email')">
+                  <span class="error-message">Invalid</span>
+                    </ng-container>
+                </ng-container>
+            </div>
+
+            <div class="col-md-6 mb-4 form-field">
+                <label for="password" class="form-label text-dark fw-bold">Password:</label>
+      <div class="password-wrapper">
+                <input type="{{ showPassword ? 'text' : 'password' }}" class="form-control" formControlName="password" id="password">
+                <span class="password-toggle" (click)="togglePassword()">
+                  <i class="fas" [ngClass]="showPassword ? 'fa-eye-slash' : 'fa-eye'"></i>
+                </span>
+      </div>
+                <ng-container *ngIf="signUp.get('password')?.touched || signUp.get('password')?.dirty">
+                    <ng-container *ngIf="signUp.get('password')?.hasError('required')">
+                  <span class="error-message">Required*</span>
+
+                    </ng-container>
+                    <ng-container *ngIf="signUp.get('password')?.hasError('pattern')">
+                  <span class="error-message-visible">1 (uppercase,lowercase,digit) 1 special char(@$!%*?&) min length 8</span>
+                    </ng-container>
+                </ng-container>
+            </div>
+            
+
+            <div class="col-12 mb-4 form-field">
+                <label for="profile_pic" class="form-label text-dark fw-bold">Upload Profile Image:</label>
+                <input type="file" class="form-control" id="profile_pic" formControlName="profile_pic" (change)="selectImg($event)">
+                <ng-container *ngIf="signUp.get('profile_pic')?.touched || signUp.get('profile_pic')?.dirty">
+                    <ng-container *ngIf="signUp.get('profile_pic')?.hasError('required')">
+                  <span class="error-message">Required*</span>
+                    </ng-container>
+                </ng-container>
+            </div>
+            
+            <button type="submit" class="but text-light  mt-3" [disabled]="signUp.invalid">Sign Up</button>
+        </div>
+        <div class="col-12 mt-3">
+          <span class="d-block text-dark">You already have an acount? <a routerLink="/signin" class="sign"> Sign In</a></span>
+        </div>
+    </form>
+</div>
+
+
+</div>
+<ng-toast></ng-toast>

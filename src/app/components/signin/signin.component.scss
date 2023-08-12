@@ -1,0 +1,92 @@
+
+.bg-white{
+// background: linear-gradient(135deg, rgb(222, 73, 143), rgb(211, 44, 89));
+    box-shadow: 1px 21px 20px gray;
+    background-color: #fff;
+}
+
+.border-form{
+  border-top: 18px solid #E75480;
+}
+.form-control, .form-select{
+  // border-bottom: 1px solid  #2091E7;
+  border: 1px solid #000;
+  // border-radius: 10px;
+  border-radius: none;
+}
+.form-control:focus, .form-select:focus{
+    border: 1px solid #000;
+    border-bottom: 3px solid #000;
+  box-shadow: none;
+  // border-width: 2px;
+  border-radius: 10px;
+}
+.password-wrapper {
+    position: relative;
+  }
+  
+  .password-input {
+    padding-right: 40px; /* Adjust the value as needed to provide enough space for the icon */
+  }
+  
+  .password-toggle {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: #999;
+  }
+  
+  .password-toggle i {
+    font-size: 18px;
+    color: #007bff;
+  }
+  
+  .password-toggle:hover {
+    color: #5e2929;
+  }
+
+  .but {
+    padding: 8px 16px;
+    border: none;
+    background-color: #E75480;
+    border-radius: 4px;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .but:active {
+    background-color: #E75480;
+    color: #fff;
+  }
+  
+  .but:hover {
+    background-color: #ef3f74;
+  }
+
+  
+  .form-field {
+    position: relative; /* Create a relative positioning context */
+    margin-bottom: 1rem; /* Add some spacing between fields */
+}
+
+.error-message {
+    font-size: 12px; /* Set a smaller font size for the error message */
+    color: #e61111; /* Change the color of the error message */
+    position: absolute; /* Position the error message absolutely */
+    bottom: -20px; /* Push the error message slightly below the input field */
+    left: 0; /* Align the error message with the left side of the input field */
+}
+
+.sign{
+  color: #6699e1;
+}
+.bg-col{
+  background: url(../../../assets/img/bgsign.jpg);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-position: center;
+
+}

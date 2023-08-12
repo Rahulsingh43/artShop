@@ -1,0 +1,7 @@
+
+        
+        <span class="profile-opt but rounded" routerLinkActive="active" [routerLink]="['/profile',{outlets:{profnav:['profilenav'],user:['userinfo']}}]">Profile Details</span>
+        <span class="profile-opt but rounded" routerLinkActive="active" [routerLink]="['/profile',{outlets:{profnav:['profilenav'],user:['useraddress']}}]">Address</span>
+        <span class="profile-opt but rounded" routerLinkActive="active" [routerLink]="['/profile',{outlets:{profnav:['profilenav'],user:['userorder']}}]">Order</span>
+        <span class="profile-opt but rounded" routerLinkActive="active" routerLink="/cart">Cart</span>
+        <span class="profile-opt but rounded" routerLinkActive="active" (click)="logedout()">Sign Out</span>

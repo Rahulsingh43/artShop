@@ -1,0 +1,13 @@
+  <h1 class="text-center  text">Category</h1>
+  <owl-carousel-o [options]="customOptions">
+        <ng-container *ngFor="let slide of dynamicSlides">
+            <ng-template carouselSlide [id]="slide.id">
+                <div class="p-2">
+                    <img [src]="slide.src" class="rounded-circle img" routerLink="/{{slide.route}}" [alt]="slide.alt">
+                    <span class="d-block text-center title-font fst-italic mt-3">{{slide.title}}</span>
+                </div> 
+            </ng-template>
+        </ng-container>
+    </owl-carousel-o> 
+
+

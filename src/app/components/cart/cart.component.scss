@@ -1,0 +1,68 @@
+.bg-button{
+    display: inline-block;
+    min-width: 30px;
+    min-height: 30px;
+    font-weight: 400;
+    background-color: #c4c8c8;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    border-radius: 7px;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+.bg-delete{
+  background: rgb(201, 39, 39);
+  color: #fff;
+  padding: 5px 11px;
+}
+
+.but {
+    padding: 8px 16px;
+    border: none;
+    background-color: #E75480;
+    border-radius: 4px;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .but:active {
+    background-color: #e34675;
+    color: #fff;
+  }
+  
+  .but:hover {
+    background-color: #cf2357;
+  }
+  .but.active {
+    background-color: #cf2357;
+  }
+.box{
+    background: #fff;
+}
+.card-w{
+    max-height: 50px;
+}
+.text-prod-price{
+    color: #70a3ea;
+}
+.text-disc{
+   color: #E75480;
+}
+.text-bl{
+    display: block;
+}
+
+.min-h{
+  min-height: 500px;
+  position: relative;
+}
+
+.else-content{
+position:absolute;
+top: 40%;
+left: 38%;
+}
+.else-text{
+  color: #FF7F50;
+}

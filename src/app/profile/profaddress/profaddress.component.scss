@@ -1,0 +1,26 @@
+.but {
+    padding: 8px 16px;
+    border: none;
+    min-height: 20px;
+    min-width: 100px;
+    background-color: #E75480;
+    border-radius: 4px;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .but:active {
+    background-color: #e34675;
+    color: #fff;
+  }
+  
+  .but:hover {
+    background-color: #cf2357;
+  }
+  .but.active {
+    background-color: #cf2357;
+  }
+  .bg-white{
+    background-color: #fff;
+  }

@@ -1,0 +1,30 @@
+<form [formGroup]="userDetail" (ngSubmit)="userFormSubmit()">
+<div class="row">
+    
+    <div class="col-12">
+        <label for="email" class="form-label">Email</label>
+        <input type="text" class="form-control" formControlName="email" id="email" [value]="userDetailShow?.email"  [readOnly]="permissionShow">
+    </div>
+    <div class="col-12">
+        <label for="phn" class="form-label">Phone</label>
+        <input type="text" class="form-control" id="Phone" [value]="userDetailShow?.phn" formControlName="phn" [readOnly]="permissionShow">
+    </div>
+    <ng-container *ngIf="!permissionShow; else elsePart">
+    <div class="col-12" >
+        <span>Choose Your Gender</span><br>
+        <input type="radio" class="form-check-input" value="male"  id="male" formControlName="gender">
+        <label for="male" class="form-label">Male</label>
+        <input type="radio" class="form-check-input ms-2" id="female" value="female"  formControlName="gender">
+        <label for="female" class="form-label">Female</label>
+    </div>
+</ng-container>
+<ng-template #elsePart>
+    <p>Gender: {{userDetailShow?.gender}}</p>
+</ng-template>
+</div>
+<div class="form-button mt-4">
+    <button type="submit" class="but">Save</button>
+    <button type="button" class="but ms-3" (click)="edit()">Edit</button>
+
+</div>
+</form>
